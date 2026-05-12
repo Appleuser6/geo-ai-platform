@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0a1a2a 0%, #1a3a5c 100%);
+  overflow: hidden;
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.15;
+  background-image:
+    linear-gradient(30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
+    linear-gradient(-30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
+    linear-gradient(60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%),
+    linear-gradient(-60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%);
+  background-size: 100px 100px, 100px 100px, 150px 150px, 150px 150px;
+}
+
+.login-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #bfbfbf;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #f0f2f5;
+  position: relative;
+}
+
+.dashboard-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  background-image:
+    linear-gradient(30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
+    linear-gradient(-30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
+    linear-gradient(60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%),
+    linear-gradient(-60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%);
+  background-size: 100px 100px, 100px 100px, 150px 150px, 150px 150px;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.user-icon {
+  font-size: 18px;
+}
+
+.dashboard-header .logo {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+}
+
+.dashboard-header .logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-header .title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.logout-button {
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-main {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.module-card {
+  background: #ffffff;
+  padding: 28px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: default;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.module-card:hover {
+  box-shadow: 0 4px 16px rgba(24, 144, 255, 0.15);
+  transform: translateY(-2px);
+  border-color: #e6f7ff;
+}
+
+.module-card.clickable {
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+  border-color: #1890ff;
+}
+
+.module-card.clickable:hover {
+  box-shadow: 0 4px 20px rgba(24, 144, 255, 0.25);
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f7ff 100%);
+  border-color: #40a9ff;
+}
+
+.card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.module-card:hover .card-icon svg {
+  transform: scale(1.05);
+}
+
+.module-card.clickable .card-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(24, 144, 255, 0.3));
+}
+
+.card-text {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.module-card.clickable .card-text {
+  color: #1890ff;
+}
+
+.card-arrow {
+  display: none;
+  font-size: 16px;
+  color: #1890ff;
+  font-weight: bold;
+}
+
+.module-card.clickable:hover .card-arrow {
+  display: block;
+  animation: arrowPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes arrowPulse {
+  from {
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+}
