@@ -32,27 +32,21 @@ body {
 }
 
 .login-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  display: none;
 }
 
 .login-content {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 420px;
-  padding: 20px;
-  margin-top: -40px;
+  max-width: 500px;
+  padding: 40px 30px;
+  text-align: center;
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .logo {
@@ -69,13 +63,14 @@ body {
 
 .title {
   color: #ffffff;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 700;
   font-family: 'SimSun', 'STSong', 'FangSong', '楷体', 'KaiTi', serif;
   letter-spacing: 4px;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  line-height: 1.2;
+  white-space: nowrap; /* 强制单行，但我们用br手动换行 */
+  line-height: 1.4;
+  margin: 0 auto;
 }
 
 .login-form {
@@ -87,7 +82,7 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .input-wrapper {
@@ -98,7 +93,9 @@ body {
 
 .input-icon {
   position: absolute;
-  left: 16px;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 20px;
   height: 20px;
   color: #b0b0b0;
@@ -109,58 +106,62 @@ body {
 
 .form-group input {
   width: 100%;
-  padding: 14px 16px 14px 48px;
+  padding: 16px 20px 16px 52px;
   border: 1.5px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  font-size: 15px;
+  border-radius: 12px;
+  font-size: 16px;
   transition: all 0.3s;
   outline: none;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.85);
   color: #333333;
 }
 
 .form-group input:focus {
-  border-color: #f5a623;
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+  border-color: #1890ff;
+  box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.25);
   background: #ffffff;
 }
 
 .form-group input:focus ~ .input-icon,
 .input-wrapper:focus-within .input-icon {
-  color: #f5a623;
+  color: #1890ff;
 }
 
 .form-group input::placeholder {
   color: #b5b5b5;
   font-size: 14px;
 }
-
 .login-button {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #f5a623 0%, #e8941a 100%);
+  padding: 16px;
+  /* 静谧蓝半透明，和登录背景很搭 */
+  background: rgba(112, 177, 238, 0.75);
   color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   letter-spacing: 2px;
-  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+  /* 阴影柔和不突兀 */
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.25);
+  margin-top: 10px;
 }
 
 .login-button:hover {
-  background: linear-gradient(135deg, #ffb840 0%, #f5a623 100%);
-  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5);
-  transform: translateY(-1px);
+  /* 悬浮加深一点，不换花哨渐变 */
+  background: rgba(24, 144, 255, 0.88);
+  box-shadow: 0 6px 18px rgba(24, 144, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 .login-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.3);
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
 }
 
+/* Dashboard 样式原样保留 */
 .dashboard-container {
   min-height: 100vh;
   background: #f0f2f5;

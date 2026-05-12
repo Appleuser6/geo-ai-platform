@@ -29,7 +29,7 @@ function Login() {
               <line x1="80" y1="50" x2="90" y2="50" stroke="#ffffff" strokeWidth="2"/>
             </svg>
           </div>
-          <h1 className="title">襄阳地质资源环境大数据平台</h1>
+          <h1 className="title">襄阳地质资源环境大数据<br />平台</h1>
         </div>
         <form className="login-form" onSubmit={handleLogin}>
           <div className="form-group">
