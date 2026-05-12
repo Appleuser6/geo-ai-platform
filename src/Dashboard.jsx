@@ -53,15 +53,12 @@ function Dashboard() {
                 key={index}
                 className={`module-card ${index === 0 ? 'clickable' : ''}`}
                 onClick={() => handleCardClick(index)}
+                style={{
+                  backgroundImage: `url(/src/assets/image/${String(index + 1).padStart(3, '0')}.png)`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               >
-                <div className="card-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8" y="8" width="48" height="48" rx="4" fill="none" stroke="#1890ff" strokeWidth="2"/>
-                    <path d="M20 32 L44 32" stroke="#1890ff" strokeWidth="2" strokeDasharray="4,4"/>
-                    <path d="M32 20 L32 44" stroke="#1890ff" strokeWidth="2"/>
-                    <circle cx="32" cy="32" r="6" fill="#1890ff"/>
-                  </svg>
-                </div>
                 <span className="card-text">{module}</span>
                 {index === 0 && <span className="card-arrow">→</span>}
               </div>
