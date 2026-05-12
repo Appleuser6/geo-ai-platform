@@ -16,7 +16,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0a1a2a 0%, #1a3a5c 100%);
   overflow: hidden;
 }
 
@@ -26,101 +25,140 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.15;
-  background-image:
-    linear-gradient(30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
-    linear-gradient(-30deg, transparent 49%, rgba(24, 144, 255, 0.1) 50%, transparent 51%),
-    linear-gradient(60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%),
-    linear-gradient(-60deg, transparent 49%, rgba(24, 144, 255, 0.08) 50%, transparent 51%);
-  background-size: 100px 100px, 100px 100px, 150px 150px, 150px 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.login-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .login-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
-  max-width: 480px;
-  padding: 40px;
+  max-width: 420px;
+  padding: 20px;
+  margin-top: -40px;
 }
 
 .login-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 20px;
 }
 
 .logo svg {
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .title {
   color: #ffffff;
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 38px;
+  font-weight: 700;
+  font-family: 'SimSun', 'STSong', 'FangSong', '楷体', 'KaiTi', serif;
+  letter-spacing: 4px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .login-form {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  background: none;
+  backdrop-filter: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .form-group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  color: #333333;
-  font-size: 14px;
-  font-weight: 500;
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  color: #b0b0b0;
+  pointer-events: none;
+  flex-shrink: 0;
+  transition: color 0.3s;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 14px 16px 14px 48px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  font-size: 15px;
   transition: all 0.3s;
   outline: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #333333;
 }
 
 .form-group input:focus {
-  border-color: #1890ff;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+  border-color: #f5a623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+  background: #ffffff;
+}
+
+.form-group input:focus ~ .input-icon,
+.input-wrapper:focus-within .input-icon {
+  color: #f5a623;
 }
 
 .form-group input::placeholder {
-  color: #bfbfbf;
+  color: #b5b5b5;
+  font-size: 14px;
 }
 
 .login-button {
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  padding: 14px;
+  background: linear-gradient(135deg, #f5a623 0%, #e8941a 100%);
   color: #ffffff;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 500;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
 }
 
 .login-button:hover {
-  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
-  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  background: linear-gradient(135deg, #ffb840 0%, #f5a623 100%);
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5);
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.3);
 }
 
 .dashboard-container {
